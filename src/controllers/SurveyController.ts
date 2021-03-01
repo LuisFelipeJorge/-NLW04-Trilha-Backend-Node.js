@@ -17,24 +17,9 @@ class SurveysController {
     
     return response.status(201).json(survey);    
 
-
-    // const userAlreadyExists = await usersReposiroty.findOne({
-    //   email
-    // });
-
-    // if (userAlreadyExists) {
-    //   return response.status(400).json({
-    //     error: "User already exists!!",
-    //   })
-    // }
-
-    // const user = usersReposiroty.create({
-    //   name, email
-    // })
-
   }
 
-  async show(reques:Request, response:Response) {
+  async show(request:Request, response:Response) {
     const surveysReposiroty = getCustomRepository(SurveysRepository);
     const all = await surveysReposiroty.find();
 
